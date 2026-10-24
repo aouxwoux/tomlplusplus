@@ -11730,7 +11730,7 @@ TOML_NAMESPACE_START
 			return {};
 		if (length > components_.size() - start)
 			length = components_.size() - start;
-		return subpath(begin() + static_cast<int>(start), begin() + static_cast<int>(start + length));
+		return subpath(begin() + static_cast<ptrdiff_t>(start), begin() + static_cast<ptrdiff_t>(start + length));
 	}
 }
 TOML_NAMESPACE_END;

@@ -284,6 +284,7 @@ UTF-8 decoding is performed using a state machine based on Bjoern Hoehrmann's '[
 ### With thanks to:
 
 -   **[@a-is](https://github.com/a-is)** - Fixed a bug
+-   **[@aouxwoux](https://github.com/aouxwoux)** - Fixed out-of-bounds read in path::subpath
 -   **[@beastle9end](https://github.com/beastle9end)** - Made Windows.h include bypass
 -   **[@bjadamson](https://github.com/bjadamson)** - Reported some bugs and helped design a new feature
 -   **[@bobfang1992](https://github.com/bobfang1992)** - Reported a bug and created a [wrapper in python](https://github.com/bobfang1992/pytomlpp)
