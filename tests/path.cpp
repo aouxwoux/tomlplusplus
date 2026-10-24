@@ -151,6 +151,16 @@ TEST_CASE("path - manipulating")
 		CHECK(p0.subpath(0, 0).str() == "");
 		CHECK(p0.subpath(2, 0).str() == "");
 		CHECK(p0.subpath(2, 1).str() == "[1]");
+		CHECK(p0.subpath(100, 1).str() == "");
+		CHECK(p0.subpath(p0.size(), 1).str() == "");
+		CHECK(p0.subpath(2, 100).str() == "[1].path[2].object");
+		CHECK(p0.subpath(0, 100).str() == "a.simple[1].path[2].object");
+		CHECK(p0.subpath(1, static_cast<size_t>(-1)).str() == "simple[1].path[2].object");
+
+		toml::path p_empty;
+		CHECK(p_empty.subpath(0, 0).str() == "");
+		CHECK(p_empty.subpath(0, 1).str() == "");
+		CHECK(p_empty.subpath(10, 5).str() == "");
 	}
 
 	SECTION("leaf")

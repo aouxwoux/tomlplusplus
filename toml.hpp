@@ -11726,6 +11726,10 @@ TOML_NAMESPACE_START
 	TOML_EXTERNAL_LINKAGE
 	path path::subpath(size_t start, size_t length) const
 	{
+		if (start >= components_.size() || length == 0)
+			return {};
+		if (length > components_.size() - start)
+			length = components_.size() - start;
 		return subpath(begin() + static_cast<int>(start), begin() + static_cast<int>(start + length));
 	}
 }
